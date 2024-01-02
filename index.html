@@ -8,6 +8,7 @@
     <title>Scroll Snap</title>
   </head>
   <body>
+    <nav>something</nav>
     <article class="scroll-wrapper">
       <section class="scroll-section">
         <h2>Section one</h2>
@@ -26,9 +27,30 @@
       </section>
     </article>
     <style>
+      nav {
+        height: 50px;
+        position: fixed;
+        background-color: #333;
+        width: 100%;
+      }
       .scroll-wrapper {
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: scroll;
+        scroll-snap-type: y proximity;
+        border: 2px solid red;
+        background-color: #777;
+        padding-top: 50px;
+        scroll-padding-top: 50px;
       }
       .scroll-section {
+        scroll-snap-stop: always;
+        height: 100%;
+        background-color: #577;
+        scroll-snap-align: start;
+        &:nth-child(even) {
+          background-color: #332;
+        }
       }
     </style>
   </body>
